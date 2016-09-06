@@ -24,4 +24,18 @@ describe('Sending a POST to /api/add', ()=> {
         });
     });
   });
+
+  describe('should fail', ()=> {
+    it('when the nothing is sent in', (done)=> {
+      api.post('/api/add')
+        .expect(432)
+        .end((err, res)=> {
+          if(err) return done(err);
+
+          res.body.message.should.be.equal('No data');
+
+          done();
+    });
+  });
+});
 });
