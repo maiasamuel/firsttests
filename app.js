@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.post('/api/add', (req, res, next)=> {
+  res.send({result: req.body.num1 + req.body.num2});
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
