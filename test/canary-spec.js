@@ -12,6 +12,8 @@ describe('Canary test', ()=> {
   it('typeof string should be a string', ()=> {
     const str = 'maia';
 
+
+
     str.should.be.a('string');
   });
 });
